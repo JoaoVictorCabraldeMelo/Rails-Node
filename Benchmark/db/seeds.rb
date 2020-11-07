@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# Creation of other records in Ruby above ...
+#
+
+connection = ActiveRecord::Base.connection
+
+sql = File.read('db/users.sql') 
+statements = sql.split(/;$/)
+statements.pop
+
+ActiveRecord::Base.transaction do
+  statements.each do |statement|
+    connection.execute(statement)
+  end
+end
+
