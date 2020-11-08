@@ -8,13 +8,17 @@
   </head>
   <body>
     <h1>Users</h1>
-    <p>Click a user below to view their pets.</p>
     <ul>
-      {{#each users}}
+      <% users.map(user => { %>
       <li>
-        <a href="/users/{{ id }}">{{ name }}</a>
+        <div>
+          <strong><%= user.first_name %> </strong>
+          <strong><%= user.last_name %></strong>
+          <br />
+          <span><%= user.email %></span>
+        </div>
       </li>
-      {{/each}}
+      <% }); %>
     </ul>
   </body>
 </html>
