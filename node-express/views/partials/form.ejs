@@ -1,0 +1,13 @@
+<meta charset="UTF-8">
+<form action="<%=action%>" method="POST">
+    <input type="text" placeholder="<%= (!locals.user)? 'First Name': user.first_name  %>"  name="first_name">
+    <input type="text" placeholder="<%= (!locals.user)? 'Last Name': user.last_name  %>" name="last_name">
+    <input type="text" placeholder="<%= (!locals.user)? 'email': user.email  %>" name="email">
+    <input type="text" placeholder="<%= (!locals.user)? 'gender': user.gender  %>" name="gender">
+    <input type="text" placeholder="<%= (!locals.user)? 'ip_address': user.ip_address  %>" name="ip_address">
+
+
+
+    <button type="submit">Enviar</button>
+
+</form>
