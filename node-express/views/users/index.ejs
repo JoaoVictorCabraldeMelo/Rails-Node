@@ -8,17 +8,29 @@
   </head>
   <body>
     <h1>Users</h1>
-    <ul>
-      <% users.map(user => { %>
-      <li>
-        <div>
-          <strong><%= user.first_name %> </strong>
-          <strong><%= user.last_name %></strong>
-          <br />
-          <span><%= user.email %></span>
-        </div>
-      </li>
-      <% }); %>
-    </ul>
+
+    <table>
+      <thead>
+        <tr>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>Ip address</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.map(user => { %>
+        <tr>
+          <td><%= user.first_name %></td>
+          <td><%= user.last_name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.gender %></td>
+          <td><%= user.ip_address %></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
   </body>
 </html>
