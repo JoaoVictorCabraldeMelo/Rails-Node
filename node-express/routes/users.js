@@ -51,9 +51,17 @@ router.get("/json", async function (req, res, next) {
   res.json(users);
 });
 
-router.get("/new",function (req, res) {
-  res.render("../views/users/new",{ action:"users/show" });
- });
+router.get("/new", function (req, res) {
+  res.render("../views/users/new", { action: "users/show" });
+});
+
+router.delete("/", async function (req, res) {
+  const [user] = await User.findAll({
+    limit: 1,
+  });
+  await user.destroy();
+  res.json(user);
+});
 
 /*
 router.get("/:userId", async function (req, res, next) {
