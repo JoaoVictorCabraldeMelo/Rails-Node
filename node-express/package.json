@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "reset": "sequelize-cli db:drop && sequelize-cli db:create && sequelize-cli db:migrate && sequelize-cli db:seed:all"
+    "reset": "sequelize-cli db:drop && sequelize-cli db:create && sequelize-cli db:migrate && sequelize-cli db:seed:all", 
+    "clear": "sequelize-cli db:drop && sequelize-cli db:create && sequelize-cli db:migrate"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
