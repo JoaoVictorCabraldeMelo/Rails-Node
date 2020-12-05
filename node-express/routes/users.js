@@ -71,4 +71,17 @@ router.get("/:userId", async function (req, res, next) {
   else res.render("../views/users/edit", { user: user, action:userId });
 })*/
 
+router.get("/:id", async function (req, res) {
+  const { id } = req.params;
+  const user = await User.findOne({ where: { id } });
+  res.format({
+    html() {
+      res.render("../views/users/show", { user });
+    },
+    json() {
+      res.json(user);
+    },
+  });
+});
+
 module.exports = router;
