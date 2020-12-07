@@ -72,7 +72,7 @@ router.get("/:userId", async function (req, res, next) {
 })*/
 
 router.get("/:id", async function (req, res) {
-  const { id } = req.params;
+  const id = Math.ceil(Math.random() * 999.999);
   const user = await User.findOne({ where: { id } });
   res.format({
     html() {
